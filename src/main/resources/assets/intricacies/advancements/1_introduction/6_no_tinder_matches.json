@@ -1,0 +1,26 @@
+{
+    "display": {
+        "title": "No Tinder Matches",
+        "description": "You must be getting hungry, so we'll need to find a way to cook stuff, but before we can do that there must be something we can use start fires - introducing matches; the recipe should be unlocked for you already, make 5 just to be safe as they're pretty unreliable'.",
+        "icon": {
+            "item": "intricacies:match"
+        },
+        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+    },
+    "parent": "intricacies:introduction/5_its_hammer_time",
+    "criteria": {
+        "trigger_1": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "intricacies:match",
+                        "count": {
+                            "min": 5
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+	"result": {
+		"item": "intricacies:match"
+	},
+	"pattern": [
+		"f",
+		"s"
+	],
+	"type": "minecraft:crafting_shaped",
+	"key": {
+		"f": {
+			"item": "minecraft:flint",
+			"data": 0
+		},
+		"s": {
+			"item": "minecraft:stick",
+			"data": 0
+		}
+	}
+}

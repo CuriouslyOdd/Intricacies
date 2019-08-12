@@ -1,0 +1,32 @@
+{
+    "display": {
+        "title": "Shania Twine",
+        "description": "Plant fibers are basically useless as they are, but combining 4 of them together to create something sturdier like plant twine will definitely be helpful.",
+        "icon": {
+            "item": "intricacies:rock"
+        },
+        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+    },
+    "parent": "intricacies:introduction/3_sticks_and_stones",
+    "criteria": {
+        "trigger_1": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "intricacies:rock",
+                        "count": {
+                            "min": 5
+                        }
+                    },
+                    {
+                        "item": "minecraft:stick",
+                        "count": {
+                            "min": 5
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

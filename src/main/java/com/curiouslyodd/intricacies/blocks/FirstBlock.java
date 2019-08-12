@@ -22,10 +22,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class FirstBlock extends Block {
 	public FirstBlock() {
-        super(Material.ROCK);
+        super(Material.GROUND);
         setUnlocalizedName(Main.MODID + ".firstblock");
         setRegistryName("firstblock");
         setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
+        setHardness(0.2f);
     }
 	
 	@Override

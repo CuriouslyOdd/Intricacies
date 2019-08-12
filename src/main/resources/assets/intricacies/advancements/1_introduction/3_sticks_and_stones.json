@@ -1,0 +1,32 @@
+{
+    "display": {
+        "title": "Sticks and Stones",
+        "description": "Sticks will play a vital part of the early game and you'll find them by breaking leaves. Rocks are equally important, they're collected by breaking stone without a tool. Collect 5 of each.",
+        "icon": {
+            "item": "intricacies:rock"
+        },
+        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+    },
+    "parent": "intricacies:introduction/2_plant_fibers",
+    "criteria": {
+        "trigger_1": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "intricacies:rock",
+                        "count": {
+                            "min": 5
+                        }
+                    },
+                    {
+                        "item": "minecraft:stick",
+                        "count": {
+                            "min": 5
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,8 +1,7 @@
-package com.curiouslyodd.intricacies.init;
+package com.curiouslyodd.intricacies.entities;
 
 import com.curiouslyodd.intricacies.Main;
 import com.curiouslyodd.intricacies.client.render.RenderIntricateVillager;
-import com.curiouslyodd.intricacies.entities.IntricateVillager;
 
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;

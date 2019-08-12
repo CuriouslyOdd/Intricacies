@@ -1,0 +1,16 @@
+{
+    "display": {
+        "title": "Getting Started",
+        "description": "Welcome to Intricacies. The advancements in this category are designed to help you as an introduction to the mod and it's inner systems. Follow the path, but not too closely. Intricacies relies on the vanilla recipe unlock system to pay attention to when you unlock new recipes to see how everything is made.",
+        "icon": {
+            "item": "minecraft:diamond"
+        },
+        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+        "announce_to_chat": false
+    },
+    "criteria": {
+        "trigger_1": {
+            "trigger": "minecraft:location"
+        }
+    }
+}

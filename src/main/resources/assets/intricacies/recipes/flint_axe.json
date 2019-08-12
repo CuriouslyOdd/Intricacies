@@ -1,0 +1,24 @@
+{
+	"result": {
+		"item": "intricacies:flint_axe"
+	},
+	"pattern": [
+		"fr",
+		"s "
+	],
+	"type": "minecraft:crafting_shaped",
+	"key": {
+		"f": {
+			"item": "intricacies:plant_fibers",
+			"data": 0
+		},
+		"r": {
+			"item": "intricacies:rock",
+			"data": 0
+		},
+		"s": {
+			"item": "minecraft:stick",
+			"data": 0
+		}
+	}
+}

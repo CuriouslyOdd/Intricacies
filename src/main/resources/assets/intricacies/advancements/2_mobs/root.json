@@ -1,0 +1,23 @@
+{
+    "display": {
+        "title": "Mobs and animals",
+        "description": "This section will not only detail all the changes made to mobs and animals, but will also guide you through processing their raw materials and teach you some of the basics of the reworked combat system.",
+        "icon": {
+            "item": "minecraft:iron_sword"
+        },
+        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+        "announce_to_chat": false
+    },
+    "criteria": {
+        "trigger_1": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "intricacies:flint_axe"
+                    }
+                ]
+            }
+        }
+    }
+}

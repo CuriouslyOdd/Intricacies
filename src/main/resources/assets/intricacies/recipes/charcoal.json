@@ -1,0 +1,17 @@
+{
+	"result": {
+		"item": "intricacies:charcoal"
+	},
+	"pattern": [
+		"ccc",
+		"ccc",
+		"ccc"
+	],
+	"type": "minecraft:crafting_shaped",
+	"key": {
+		"c": {
+			"item": "minecraft:coal",
+			"data": 1
+		}
+	}
+}

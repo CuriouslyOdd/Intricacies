@@ -1,8 +1,9 @@
 package com.curiouslyodd.intricacies.proxy;
 
-import com.curiouslyodd.intricacies.init.ModEntities;
-import com.curiouslyodd.intricacies.init.ModItems;
-import com.curiouslyodd.intricacies.init.ModKeyBindings;
+import com.curiouslyodd.intricacies.blocks.ModBlocks;
+import com.curiouslyodd.intricacies.entities.ModEntities;
+import com.curiouslyodd.intricacies.items.ModItems;
+
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -16,17 +17,17 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void preInit(FMLPreInitializationEvent e) {
         super.preInit(e);
-        
-        ModEntities.initModels();
     }
     
     @Override
     public void init(FMLInitializationEvent event) {
-    	ModKeyBindings.registerKeyBindings();
+    	
     }
     
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
+    	ModEntities.initModels();
     	ModItems.initModels();
+        ModBlocks.initModels();
     }
 }

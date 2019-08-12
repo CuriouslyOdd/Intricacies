@@ -1,0 +1,8 @@
+{
+	"name": "New beginnings",
+	"description": "Begin your journey by collecting basic supplies. You can get sticks from leaves and plant fibers from grass.",
+	"items": [
+		"intricacies:plant_fibers",
+		"minecraft:stick"
+	]
+}

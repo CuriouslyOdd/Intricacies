@@ -1,10 +1,14 @@
 package com.curiouslyodd.intricacies.capabilities.skills;
 
-import com.curiouslyodd.intricacies.Main;
+import com.curiouslyodd.intricacies.client.guis.GuiHandler;
 
-import net.minecraft.init.SoundEvents;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockLog;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemAxe;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 
@@ -15,8 +19,22 @@ public class SkillManager {
 	/**
 	 * Add Experience
 	 * 
-	 * Adds a set amount of experience to the provided skill and player, this will automatically
-	 * level up any skills if they surpass the threshold.
+	 * Adds an automatically calculated amount of experience to the provided skill and player,
+	 * this will automatically level up any skills if they surpass the threshold.
+	 * 
+	 * @param player
+	 * @param key
+	 */
+	public static void addExperience(EntityPlayer player, String key) {
+		int experience = calculateExperience(player, key);
+		addExperience(player, key, experience);
+	}
+	
+	/**
+	 * Add Experience
+	 * 
+	 * Adds a set amount of experience to the provided skill and player, this will
+	 * automatically level up any skills if they surpass the threshold.
 	 * 
 	 * @param player
 	 * @param key
@@ -33,8 +51,41 @@ public class SkillManager {
 			skills.doLevelUp(key);
 			
 			// Notify player of level up.
-			Main.guiToastHandler.showToast("Skill levelled up!", key + " is now level " + skills.getLevel(key));
+			GuiHandler.guiToastHandler.showToast("Skill levelled up!", key + " is now level " + skills.getLevel(key));
 			Minecraft.getMinecraft().player.playSound(SoundEvents.UI_TOAST_CHALLENGE_COMPLETE, 1, 1);
+		}
+	}
+	
+	/**
+	 * Calculate Experience
+	 * 
+	 * This calculates the amount of experience any given action gives in
+	 * retrospect of the player performing that action (or it will one day).
+	 * 
+	 * @param player
+	 * @param key
+	 * @return
+	 */
+	public static int calculateExperience(EntityPlayer player, String key) {
+		return experiencePerAction;
+	}
+	
+	/**
+	 * BlockBrokenExperienceCheck
+	 * 
+	 * Called when a block is broken to determine if a user should get
+	 * experience for doing so, then rewards that experience.
+	 * 
+	 * @param block
+	 * @param player
+	 * @param itemBeingUsed
+	 */
+	public static void blockBrokenExperienceCheck(Block block, EntityPlayer player, Item itemBeingUsed) {
+		if(block instanceof BlockLog) {
+			// If an axe is used assign woodcutting XP.
+			if(itemBeingUsed instanceof ItemAxe) {
+				SkillManager.addExperience(player, "woodcutting");
+			}
 		}
 	}
 	

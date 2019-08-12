@@ -1,4 +1,4 @@
-package com.curiouslyodd.intricacies.client.guis;
+package com.curiouslyodd.intricacies.client.guis.toast;
 
 import java.util.Timer;
 import java.util.TimerTask;

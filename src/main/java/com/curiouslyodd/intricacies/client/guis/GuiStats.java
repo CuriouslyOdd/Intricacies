@@ -1,6 +1,7 @@
 package com.curiouslyodd.intricacies.client.guis;
 
 import com.curiouslyodd.intricacies.Main;
+
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;

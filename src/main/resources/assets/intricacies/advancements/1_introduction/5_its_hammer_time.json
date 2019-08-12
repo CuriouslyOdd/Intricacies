@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": "It's Hammer Time",
+        "description": "Finally a tool (no, not you)! The rock hammer doesn't do much, but smashing stone with it will give us some flint (and more rocks, yay). It'll also act as our starting weapon, you can't cook any meat if you can't kill any animals!",
+        "icon": {
+            "item": "minecraft:flint"
+        },
+        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+    },
+    "parent": "intricacies:introduction/4_shania_twine",
+    "criteria": {
+        "trigger_1": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:flint",
+                        "count": {
+                            "min": 10
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "recipes": ["intricacies:flint_axe", "intricacies:match"]
+    }
+}

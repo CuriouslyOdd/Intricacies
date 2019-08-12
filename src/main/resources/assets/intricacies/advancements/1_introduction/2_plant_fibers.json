@@ -1,0 +1,26 @@
+{
+    "display": {
+        "title": "Plant Fibers",
+        "description": "First you need to get some Plant Fibers, you'll find them by rummaging around in the grass, you'll need 10 to proceed.",
+        "icon": {
+            "item": "intricacies:plant_fibers"
+        },
+        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+    },
+    "parent": "intricacies:introduction/root",
+    "criteria": {
+        "trigger_1": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "intricacies:plant_fibers",
+                        "count": {
+                            "min": 10
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

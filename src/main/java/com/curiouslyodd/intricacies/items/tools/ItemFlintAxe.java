@@ -2,7 +2,7 @@ package com.curiouslyodd.intricacies.items.tools;
 
 import com.curiouslyodd.intricacies.Main;
 
-import net.minecraft.block.BlockLog;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -22,8 +22,11 @@ public class ItemFlintAxe extends ItemAxe {
 	}
 
     @Override
-    public float getDestroySpeed(ItemStack stack, IBlockState state) {    	
-    	return (state.getBlock() instanceof BlockLog) ? this.efficiency : 0;
+    public float getDestroySpeed(ItemStack stack, IBlockState state) {
+    	Material material = state.getMaterial();
+    	
+    	// If the material isn't wood/grass/leaves we can't break it.
+    	return (material == Material.WOOD || material == Material.GRASS || material == Material.LEAVES || material == Material.VINE) ? this.efficiency : 0;
     }
 
 	@SideOnly(Side.CLIENT)

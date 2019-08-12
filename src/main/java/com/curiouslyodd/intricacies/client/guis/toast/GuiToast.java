@@ -1,8 +1,9 @@
-package com.curiouslyodd.intricacies.client.guis;
+package com.curiouslyodd.intricacies.client.guis.toast;
 
 import org.lwjgl.opengl.GL11;
 
 import com.curiouslyodd.intricacies.Main;
+import com.curiouslyodd.intricacies.client.guis.GuiHandler;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
@@ -21,7 +22,7 @@ public class GuiToast extends Gui {
 		// Background
 		drawTexturedModalRect(5, 5, 0, 0, guiWidth, guiHeight);
 		
-		NBTTagCompound displayed = Main.guiToastHandler.toastTagList.getCompoundTagAt(0);
+		NBTTagCompound displayed = GuiHandler.guiToastHandler.toastTagList.getCompoundTagAt(0);
 		
 		drawString(mc.fontRenderer, displayed.getString("title"), 15, 12, 0xFFFFFF);
 		

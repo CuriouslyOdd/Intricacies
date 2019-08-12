@@ -24,8 +24,10 @@ public class RecipeHandler {
 		ArrayList<Entry<ResourceLocation, IRecipe>> recipes = Lists.newArrayList(recipeRegistry.getEntries());
 		
 		for(Entry<ResourceLocation, IRecipe> recipe : recipes) {
-			recipeRegistry.remove(recipe.getKey());
-			recipeRegistry.register(DummyRecipe.from(recipe));
+			if(recipe.getKey().getResourceDomain() == "minecraft") {
+				recipeRegistry.remove(recipe.getKey());
+				recipeRegistry.register(DummyRecipe.from(recipe));
+			}
 		}
 	}
 	

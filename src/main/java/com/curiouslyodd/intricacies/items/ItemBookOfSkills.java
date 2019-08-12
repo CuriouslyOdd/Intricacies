@@ -2,8 +2,8 @@ package com.curiouslyodd.intricacies.items;
 
 import com.curiouslyodd.intricacies.Main;
 import com.curiouslyodd.intricacies.capabilities.skills.SkillManager;
-import com.curiouslyodd.intricacies.network.OpenStatsMessage;
 import com.curiouslyodd.intricacies.network.PacketHandler;
+import com.curiouslyodd.intricacies.network.stats.OpenStatsMessage;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -27,15 +27,9 @@ public class ItemBookOfSkills extends Item {
 		setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 	}
 	
-	@SideOnly(Side.CLIENT)
-    public void initModel() {
-        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
-    }
-	
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) 
 	{
-		
 		if(!worldIn.isRemote) {
 			NBTTagCompound stats = SkillManager.buildSkillList(playerIn);
 			PacketHandler.INSTANCE.sendTo(new OpenStatsMessage(stats), (EntityPlayerMP) playerIn);
@@ -43,5 +37,10 @@ public class ItemBookOfSkills extends Item {
 		
 	    return super.onItemRightClick(worldIn, playerIn, handIn);
 	}
+	
+	@SideOnly(Side.CLIENT)
+    public void initModel() {
+        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
+    }
 	
 }

@@ -1,4 +1,4 @@
-package com.curiouslyodd.intricacies.network;
+package com.curiouslyodd.intricacies.network.stats;
 
 import io.netty.buffer.ByteBuf;
 import net.minecraft.nbt.NBTTagCompound;
